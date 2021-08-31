@@ -1,0 +1,26 @@
+{% extends 'templates/base.twig' %}
+
+{% block title %}Список страниц{% endblock %}
+
+{% block page %}
+    {%
+        set pagesList = [
+          {
+              link: 'main',
+              title: 'Главная'
+          },
+        ]
+    %}
+
+    <div class="container">
+        <h1>{{ block("title") }}</h1>
+
+        <ul>
+            {% for item in pagesList %}
+                <li>
+                    <a href="{{ item.link }}.html">{{ item.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

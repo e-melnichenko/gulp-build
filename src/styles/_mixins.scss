@@ -1,0 +1,68 @@
+@mixin btn-reset() {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursot: pointer;
+}
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::placeholder') {
+    @content;
+  }
+}
+
+@mixin font-face($family, $src, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $family;
+    src: url('#{$src}.woff2') format('woff2');
+    font-display: $display;
+    font-style: $style;
+    font-weight: $weight;
+  }
+}
+
+@mixin breakpoint($width) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin breakpoint-only($from, $to) {
+  @media only screen and (min-width: $from) and (max-width: $to - 1) {
+    @content;
+  }
+}
+
+@mixin hover() {
+  @media(hover:hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+// remove chrome autofill blue bg
+@mixin transparentAutofill($color) {
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active  {
+    transition: background-color 5000s;
+    -webkit-text-fill-color: $color !important;
+  }
+}

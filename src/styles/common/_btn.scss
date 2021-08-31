@@ -1,0 +1,29 @@
+.btn {
+  display: inline-block;
+  padding: 1.1rem 1.1rem;
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: $color-main;
+  border-radius: .4rem;
+  text-align: center;
+  border: 1px solid $color-main;
+
+  &._full {
+    width: 100%;
+  }
+
+  &._white {
+    color: $color-main;
+    background-color: #fff;
+    border-color: #fff;
+  }
+
+  &._bordered-white {
+    color: $color-main;
+    background-color: #fff;
+    border-color:#E3E4E6;
+  }
+}

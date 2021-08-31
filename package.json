@@ -1,0 +1,59 @@
+{
+  "name": "gulp-build",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development gulp dev",
+    "build": "cross-env NODE_ENV=production gulp prod"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/register": "^7.15.3",
+    "autoprefixer": "^10.3.1",
+    "babel-loader": "^8.2.2",
+    "browser-sync": "^2.27.5",
+    "cross-env": "^7.0.3",
+    "cssnano": "^5.0.7",
+    "cssnano-preset-advanced": "^5.1.3",
+    "cssnano-preset-default": "^5.1.3",
+    "cssnano-preset-lite": "^2.0.1",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-changed": "^4.0.3",
+    "gulp-debug": "^4.0.0",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-load-plugins": "^2.0.7",
+    "gulp-notify": "^4.0.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-remember": "^1.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.1",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-svgstore": "^8.0.0",
+    "gulp-twig": "^1.2.0",
+    "gulplog": "^1.0.0",
+    "postcss": "^8.3.6",
+    "postcss-merge-longhand": "^5.0.2",
+    "sass": "^1.37.5",
+    "sass-module-importer": "^1.4.0",
+    "stream-combiner2": "^1.1.1",
+    "webpack-stream": "^6.1.2"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "svg4everybody": "^2.1.9"
+  },
+  "browserslist": [
+    "iOS >= 12",
+    "last 2 versions",
+    "not dead",
+    "> 0.5%"
+  ]
+}
