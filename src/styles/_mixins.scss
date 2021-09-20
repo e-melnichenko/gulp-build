@@ -29,7 +29,7 @@
 @mixin font-face($family, $src, $weight: normal, $style: normal, $display: swap) {
   @font-face {
     font-family: $family;
-    src: url('#{$src}.woff2') format('woff2');
+    src: url('../assets/fonts/#{$src}.woff2') format('woff2');
     font-display: $display;
     font-style: $style;
     font-weight: $weight;
