@@ -7,7 +7,6 @@ import cssnano from 'cssnano';
 import webpackStream from 'webpack-stream';
 import gulplog from 'gulplog';
 import del from 'del';
-import imagemin from 'gulp-imagemin';
 import bs from 'browser-sync';
 import moduleImporter from 'sass-module-importer';
 
@@ -42,7 +41,6 @@ gulp.task('assets', function() {
   return combine(
     gulp.src(['src/assets/**/*.*', '!src/assets/svg-icons/**/*.svg'], {since: gulp.lastRun('assets'), base: 'src'}),
     $.changed('build'),
-    $.debug({title: 'assets'}),
     gulp.dest('build')
   ).on('error', $.notify.onError({title: 'assets'}))
 });
@@ -99,7 +97,6 @@ gulp.task('clean', function() {
 gulp.task('sprite', function() {
   return combine(
     gulp.src('src/assets/svg-icons/**/*.svg'),
-    imagemin(),
     $.svgstore(),
     $.rename('sprite.svg'),
     gulp.dest('build/assets')
