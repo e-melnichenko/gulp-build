@@ -19,6 +19,7 @@ gulp.task('html', function() {
   return combine(
     gulp.src('src/*.twig'),
     $.twig(),
+    $.beautifyCode({indent_size: 2}),
     gulp.dest('build')
   ).on('error', $.notify.onError({title: 'html'}))
 });
