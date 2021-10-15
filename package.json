@@ -48,6 +48,7 @@
     "webpack-stream": "^6.1.2"
   },
   "dependencies": {
+    "maska": "^1.4.6",
     "normalize.css": "^8.0.1",
     "svg4everybody": "^2.1.9"
   },

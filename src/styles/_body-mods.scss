@@ -1,0 +1,39 @@
+// menu
+._menu-open {
+  overflow: hidden;
+
+  .header {
+    &__mobile-menu {
+      top: var(--header-height, 6rem);
+      transform: none;
+    }
+
+    // &__toggle-inner {
+    //   &._menu-opened {
+    //     display: flex;
+    //   }
+    //   &._menu-closed {
+    //     display: none;
+    //   }
+    // }
+  }
+}
+
+// popup
+
+._popup-open {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: $z2;
+  }
+}

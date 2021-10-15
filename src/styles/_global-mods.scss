@@ -1,0 +1,35 @@
+._hide-mobile {
+  display: none;
+  @include breakpoint($tablet-width) {
+    display: block;
+  }
+}
+
+._hide-desktop {
+  @include breakpoint($desktop-width) {
+    display: none;
+  }
+}
+
+._loading {
+  &::before {
+    content: '';
+    @include stretchAbsolute();
+    z-index: $z1;
+    background-color: rgba(255, 255, 255, 0.5);
+
+  }
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4.2rem;
+    height: 4.2rem;
+    content: '';
+    background-image: url("../assets/img/spinner.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+}

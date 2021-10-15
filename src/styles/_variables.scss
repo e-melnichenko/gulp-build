@@ -5,7 +5,13 @@ $color-second: #fff;
 // media queries
 $tablet-width: 768px;
 $desktop-width: 1200px;
+$note-width: 1360px;
+$desktop-lg-width: 1600px;
 
 // font families
 $customFont: 'custom font';
 
+// z-index z1 - поверх всех
+$z1: 1500;
+$z2: 1400;
+$z3: 1300;

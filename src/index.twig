@@ -12,12 +12,12 @@
         ]
     %}
 
-    <div class="container">
+    <div class="container" style="margin-bottom: 100px">
         <h1>{{ block("title") }}</h1>
 
         <ul>
             {% for item in pagesList %}
-                <li>
+                <li style="margin-bottom: 1rem">
                     <a href="{{ item.link }}.html">{{ item.title }}</a>
                 </li>
             {% endfor %}
