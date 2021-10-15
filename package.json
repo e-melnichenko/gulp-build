@@ -50,6 +50,7 @@
   "dependencies": {
     "maska": "^1.4.6",
     "normalize.css": "^8.0.1",
+    "proxy-middleware": "^0.15.0",
     "svg4everybody": "^2.1.9"
   },
   "browserslist": [
