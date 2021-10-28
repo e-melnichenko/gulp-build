@@ -8,7 +8,7 @@
   &__checkbox {
     &._error {
       .form__checkbox-text::before {
-        border-color: $color-main;
+        border-color: red;
       }
     }
   }
@@ -46,10 +46,10 @@
     &._error {
       .form {
         &__text-input {
-          border-color: $color-main!important;
-          color: $color-main;
+          border-color: red!important;
+          color: red;
           &::placeholder {
-            color: $color-main;
+            color: red;
           }
         }
       }
