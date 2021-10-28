@@ -1,0 +1,95 @@
+.form {
+  &__select {
+    @include breakpoint($tablet-width) {
+      width: 28rem;
+    }
+  }
+
+  &__checkbox {
+    &._error {
+      .form__checkbox-text::before {
+        border-color: $color-main;
+      }
+    }
+  }
+
+  &__checkbox-input {
+    display: none;
+
+    &:checked + .form__checkbox-text::before {
+      background-image: url('../assets/img/mark.svg');
+      background-size: 1rem 1rem;
+      background-position: top right;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__checkbox-text {
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 1.5rem;
+      height: 1.5rem;
+      border: 1px solid #ADADAD;
+      border-radius: 2px;
+      margin-right: 2rem;
+      vertical-align: bottom;
+    }
+  }
+
+  &__item {
+    margin-bottom: 1.5rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &._error {
+      .form {
+        &__text-input {
+          border-color: $color-main!important;
+          color: $color-main;
+          &::placeholder {
+            color: $color-main;
+          }
+        }
+      }
+    }
+  }
+
+  &__text-input {
+    padding: 1.4rem;
+    font-size: 1.4rem;
+    line-height: 1;
+    border: 1px solid #BBBBBB;
+    border-radius: 3px;
+    width: 100%;
+    resize: none;
+
+    &::placeholder {
+      color: #9A9A9A;
+    }
+  }
+
+  &__policy {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    .form__checkbox-text {
+      display: flex;
+      &::before {
+        margin-top: .2rem;
+        margin-right: 1rem;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  &._grey {
+    .form {
+      &__text-input {
+        background-color: #ECECEC;
+        border-color: #ECECEC;
+      }
+    }
+  }
+
+}
