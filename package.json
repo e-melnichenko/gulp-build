@@ -42,21 +42,23 @@
     "gulplog": "^1.0.0",
     "postcss": "^8.3.6",
     "postcss-merge-longhand": "^5.0.2",
+    "proxy-middleware": "^0.15.0",
     "sass": "^1.37.5",
     "sass-module-importer": "^1.4.0",
     "stream-combiner2": "^1.1.1",
     "webpack-stream": "^6.1.2"
   },
   "dependencies": {
+    "@splidejs/splide": "^3.2.1",
     "maska": "^1.4.6",
     "normalize.css": "^8.0.1",
-    "proxy-middleware": "^0.15.0",
     "svg4everybody": "^2.1.9"
   },
   "browserslist": [
     "iOS >= 12",
     "last 2 versions",
+    "> 0.5%",
     "not dead",
-    "> 0.5%"
+    "not IE 11"
   ]
 }

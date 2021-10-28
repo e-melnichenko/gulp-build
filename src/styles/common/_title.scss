@@ -1,0 +1,10 @@
+.title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 3.2rem;
+  line-height: 1;
+  color: #272727;
+  &._centered {
+    text-align: center;
+  }
+}
