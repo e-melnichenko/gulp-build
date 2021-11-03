@@ -10,20 +10,5 @@
   border-radius: .4rem;
   text-align: center;
   border: 1px solid $color-main;
-
-  &._full {
-    width: 100%;
-  }
-
-  &._white {
-    color: $color-main;
-    background-color: #fff;
-    border-color: #fff;
-  }
-
-  &._bordered-white {
-    color: $color-main;
-    background-color: #fff;
-    border-color:#E3E4E6;
-  }
+  outline: none;
 }

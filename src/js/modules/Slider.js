@@ -20,6 +20,9 @@ export default class Slider {
           ...splide.options,
           arrows: false
         };
+
+        if(!splide.options.breakpoints) return
+
         Object.keys(splide.options.breakpoints).forEach(breakpoint => {
           splide.options.breakpoints[breakpoint].arrows = false
         })
