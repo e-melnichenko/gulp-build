@@ -1,0 +1,55 @@
+.breadcrumbs {
+  padding: 1.5rem 0;
+  @include breakpoint($tablet-width) {
+    padding: 3rem 0;
+  }
+
+  &__item {
+    position: relative;
+    margin-right: 2.4rem;
+    display: inline;
+    &:last-child {
+      margin-right: 0;
+      .breadcrumbs__link {
+        color: rgba(110, 110, 110, 0.5);
+      }
+    }
+
+  }
+
+  &__arrow {
+    position: relative;
+    vertical-align: middle;
+    cursor: default;
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      right: -1.2rem;
+      width: 1px;
+      height: 7px;
+      // background-color: $color-adv;
+    }
+
+    &::after {
+      top: calc(50% - 2.5px);
+      transform: translateY(-50%) rotate(-45deg);
+    }
+
+    &::before {
+      bottom: calc(50% - 2.5px);
+      transform: translateY(50%) rotate(45deg);
+    }
+  }
+
+  &__link {
+    color: #6E6E6E;
+    font-size: 1.2rem;
+    line-height: 1;
+    text-decoration: none;
+    transition: .3s;
+    @include hover() {
+      color: #000;
+    }
+  }
+}

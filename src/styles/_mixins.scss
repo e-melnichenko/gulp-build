@@ -96,3 +96,10 @@
     -moz-appearance: textfield;
   }
 }
+
+@mixin underline($color: currentColor) {
+  background-image: linear-gradient(to right, $color 0%, $color 100%);
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  background-size: 100% 1px;
+}
