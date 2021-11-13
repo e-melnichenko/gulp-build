@@ -1,4 +1,6 @@
 .form {
+  position: relative;
+
   &__select {
     @include breakpoint($tablet-width) {
       width: 28rem;

@@ -29,24 +29,19 @@ export default function initForm() {
     if (!isFormCorrect(form)) return
 
     const formData = new FormData(form);
-    const {method, action} = form;
-
-    const res = await fetch(action, {
-      method,
-      body: formData
-    });
-
+    const { action } = form;
     const formName = form.dataset.name;
+
+    form.classList.add('_loading');
 
     try {
       const data = await fetch(action, {
-        method,
+        method: 'post',
         body: formData
       }).then(res =>  {
         if(res.ok) return res.json();
         else throw new Error(res.statusText)
       });
-
 
       if(data.success !== true) {
         throw new Error('form response success is not true')
@@ -58,6 +53,8 @@ export default function initForm() {
       console.error(e);
       Popup.open('error-popup');
     }
+
+    form.classList.remove('_loading');
   });
 
   document.addEventListener('input', (e) => {
