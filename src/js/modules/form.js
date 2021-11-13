@@ -1,25 +1,24 @@
-import HeaderCart from "./headerCart";
 import Popup from "./Popup";
 
 export default function initForm() {
-  const config = {
-    "add-to-cart": {
-      onSuccess() {
-        Popup.open('order-success-popup');
-        HeaderCart.update();
-      },
-    },
-    "call-back-success-popup": {
-      onSuccess() {
-        Popup.open('call-back-success-popup')
-      },
-    },
-    "feedback-success-popup": {
-      onSuccess() {
-        Popup.open('feedback-success-popup')
-      },
-    },
-  }
+  // const config = {
+  //   "add-to-cart": {
+  //     onSuccess() {
+  //       Popup.open('order-success-popup');
+  //       HeaderCart.update();
+  //     },
+  //   },
+  //   "call-back-success-popup": {
+  //     onSuccess() {
+  //       Popup.open('call-back-success-popup')
+  //     },
+  //   },
+  //   "feedback-success-popup": {
+  //     onSuccess() {
+  //       Popup.open('feedback-success-popup')
+  //     },
+  //   },
+  // }
 
   document.addEventListener('submit', async function(e) {
     const form = e.target.closest('.js-form');
@@ -39,11 +38,25 @@ export default function initForm() {
 
     const formName = form.dataset.name;
 
-    if(res.ok) {
-      config[formName].onSuccess()
+    try {
+      const data = await fetch(action, {
+        method,
+        body: formData
+      }).then(res =>  {
+        if(res.ok) return res.json();
+        else throw new Error(res.statusText)
+      });
+
+
+      if(data.success !== true) {
+        throw new Error('form response success is not true')
+      }
+
+      config[formName].onSuccess(data)
       form.reset();
-    } else {
-      Popup.open('error-popup')
+    } catch(e) {
+      console.error(e);
+      Popup.open('error-popup');
     }
   });
 
