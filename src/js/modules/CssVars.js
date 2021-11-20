@@ -7,6 +7,9 @@ class CssVars {
 
     this._addListeners();
     setTimeout(() => this.update(), 0);
+
+    // without update
+    this.set({ name: '--static-vh', value: `${window.innerHeight * 0.01}px` });
   }
 
   update() {
