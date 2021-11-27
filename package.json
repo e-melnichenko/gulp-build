@@ -52,6 +52,7 @@
     "@splidejs/splide": "^3.2.1",
     "maska": "^1.4.6",
     "normalize.css": "^8.0.1",
+    "smoothscroll-polyfill": "^0.4.4",
     "svg4everybody": "^2.1.9"
   },
   "browserslist": [
